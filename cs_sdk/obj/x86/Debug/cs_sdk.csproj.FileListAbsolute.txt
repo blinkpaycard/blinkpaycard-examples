@@ -1,0 +1,8 @@
+/Users/finch/Projects/cs_sdk/bin/Debug/cs_sdk.exe
+/Users/finch/Projects/cs_sdk/bin/Debug/cs_sdk.pdb
+/Users/finch/Projects/cs_sdk/bin/Debug/LitJson.dll
+/Users/finch/Projects/cs_sdk/obj/x86/Debug/cs_sdk.csprojAssemblyReference.cache
+/Users/finch/Projects/cs_sdk/obj/x86/Debug/cs_sdk.csproj.CoreCompileInputs.cache
+/Users/finch/Projects/cs_sdk/obj/x86/Debug/cs_sdk.csproj.CopyComplete
+/Users/finch/Projects/cs_sdk/obj/x86/Debug/cs_sdk.exe
+/Users/finch/Projects/cs_sdk/obj/x86/Debug/cs_sdk.pdb
