@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 该示例包含BlinkPayCard的充值下单，网页充值，接口充值，订单查询，接收通知消息
+ * 该示例包含BlinkPayCard的充值下单，网页充值，订单查询，接收通知消息
  */
 public class BlinkPayCardApi {
 
@@ -28,9 +28,6 @@ public class BlinkPayCardApi {
                 "\"sign_type\":\"md5\"," +
                 "\"osu_number\":\"efaa8247f91748468e8ae541e563cb39\"}";
 
-        String card_number = "1510000003360001";
-        String password = "091086";
-
 
         System.out.println("=========== 充值下单 ===========");
         String pre_order = preOrder(appId, mchId, appKey);
@@ -38,9 +35,6 @@ public class BlinkPayCardApi {
         System.out.println("=========== 网页充值 ===========");
         String webPayUrl = webPay(mchId, pre_order);
         System.out.println("请用浏览器访问：" + webPayUrl);
-
-        System.out.println("=========== 接口充值 ===========");
-        innerPay(appId, mchId, appKey,card_number, password, pre_order);
 
         System.out.println("=========== 订单查询 ===========");
         orderQuery(appId, mchId, appKey, pre_order);
@@ -102,38 +96,6 @@ public class BlinkPayCardApi {
         return String.format("http://pay.blinkpaycard.com/?mch_id=%s&pre_order=%s",mchId , preOrder);
     }
 
-    /**
-     * 接口充值
-     * 该接口用于平台方站内完成充值操作。
-     * 平台方通过Post请求调用该接口，BlinkPayCard系统将返回充值结果。
-     * @param appId
-     * @param mchId
-     * @param appKey
-     * @param card_number 卡号
-     * @param password 卡密码
-     * @param preOrder 预下单号
-     * @return
-     * @throws Exception
-     */
-    private static void innerPay(String appId, String mchId, String appKey, String card_number, String password, String preOrder) throws Exception {
-
-        final String signType = "md5";
-
-        Map<String,String> params = new HashMap<>();
-        params.put("card_number", card_number);
-        params.put("password", password);
-        params.put("app_id", appId);
-        params.put("mch_id", mchId);
-        params.put("pre_order",preOrder);
-        params.put("sign_type", signType);
-
-        String sign = BlinkPayCardUtil.generateSignature(params,appKey,"md5");
-        params.put("sign",sign);
-
-        String resp = BlinkPayCardRequest.requestOnce("https://pay.api.blinkpaycard.com","/pay/stationPay", JSON.toJSONString(params),6*1000 ,8*1000);
-        System.out.println(String.format("resp : %s", resp));
-
-    }
 
     /**
      * 订单查询
