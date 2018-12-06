@@ -65,46 +65,7 @@ class BlinkPayCardApi
 		return sprintf("https://pay.blinkpaycard.com/?mch_id=%s&pre_order=%s",$mch_id, $pre_order);
 	}
 
-	/**
-	 * 
-     * 接口充值
-     * 该接口用于平台方站内完成充值操作。
-     * 平台方通过Post请求调用该接口，BlinkPayCard系统将返回充值结果。
-	 * @param string $app_id 
-	 * @param string $mch_id
-	 * @param string $app_key
-	 * @param string $card_number
-	 * @param string $password
-	 * @param string $pre_order
-	 * @throws BlinkPayCardException
-	 * @return 成功时返回，其他抛异常
-	 */
-	public static function innerPay($app_id, $mch_id, $app_key, $card_number, $password, $pre_order)
-	{
-		$url = "https://pay.api.blinkpaycard.com/pay/stationPay";
-		$sign_type = 'md5';
-
-		//sign
-		$params = array(
-			"card_number" => $card_number,
-			"password" => $password,
-			"app_id" => $app_id,
-			"mch_id" => $mch_id,
-			"pre_order" => $pre_order,
-			"sign_type" => $sign_type
-		);
-
-		//签名
-		$sign = self::makeSign($params, $app_key, $sign_type);
-		$params['sign'] = $sign;
-		$content = json_encode($params);
-		
-		$response = self::postCurl($content, $url);
-		// $result = json_decode($response);
-
-		echo "res: " . $response  . "\n </br>";
-	}
-
+	
 	/**
 	 * 
      * 订单查询

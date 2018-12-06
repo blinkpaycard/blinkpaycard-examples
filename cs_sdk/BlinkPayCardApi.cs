@@ -18,10 +18,7 @@ namespace BlinkPayCard
                                 "\"pre_order\":\"dae80fd0a98e4ba6bc4a77a3bac64d2c\"," +
                                 "\"sign_type\":\"md5\"," +
                                 "\"osu_number\":\"efaa8247f91748468e8ae541e563cb39\"}";
-
-            String card_number = "1510000003360001";
-            String password = "091086";
-
+                
 
             Console.WriteLine("=========== 充值下单 ===========");
             String pre_order = PreOrder(new BlinkPayCardData());
@@ -32,9 +29,6 @@ namespace BlinkPayCard
             Console.WriteLine("=========== 网页充值 ===========");
             String webPayUrl = WebPay(pre_order);
             Console.WriteLine("请用浏览器访问：" + webPayUrl);
-
-            Console.WriteLine("=========== 接口充值 ===========");
-            InnerPay(new BlinkPayCardData(), card_number, password, pre_order);
 
             Console.WriteLine("=========== 模拟接收通知消息 ===========");
             ReceiveNotify(notify);
@@ -91,36 +85,6 @@ namespace BlinkPayCard
         }
 
 
-        /**
-         * 接口充值
-         * 该接口用于平台方站内完成充值操作。
-         * 平台方通过Post请求调用该接口，BlinkPayCard系统将返回充值结果。
-         * @param appId
-         * @param mchId
-         * @param appKey
-         * @param card_number 卡号
-         * @param password 卡密码
-         * @param preOrder 预下单号
-         * @return
-         * @throws Exception
-         */
-        public static void InnerPay(BlinkPayCardData inputObj, String card_number, String password, String preOrder)
-        {
-            string url = "https://pay.api.blinkpaycard.com/pay/stationPay";
-
-            inputObj.SetValue("app_id", BlinkPayCardConfig.GetConfig().GetAppID());
-            inputObj.SetValue("mch_id", BlinkPayCardConfig.GetConfig().GetMchID());
-            inputObj.SetValue("card_number", card_number);
-            inputObj.SetValue("password", password);
-            inputObj.SetValue("pre_order", preOrder);
-            inputObj.SetValue("sign_type", BlinkPayCardData.SIGN_TYPE_MD5);
-            inputObj.SetValue("sign", inputObj.MakeSign(BlinkPayCardData.SIGN_TYPE_MD5));//签名
-
-            string json = inputObj.ToJson();
-            string response = HttpService.Post(json, url);
-            Console.WriteLine("PreOrder response : " + response);
-
-         }
 
         /**
         *    
@@ -157,8 +121,9 @@ namespace BlinkPayCard
          */
         public static String ReceiveNotify(String notify)
         {
-
+            //TODO 接收到通知后，平台方异步处理订单业务逻辑，请立即返回nonce_str的值，作为接收成功的标识。
             Console.WriteLine("receive notify : " + notify);
+
 
             JsonData jsonData = JsonMapper.ToObject(notify);
             String nonce_str = (string)jsonData["nonce_str"];
