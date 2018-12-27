@@ -50,6 +50,8 @@ namespace BlinkPayCard
             inputObj.SetValue("app_id", BlinkPayCardConfig.GetConfig().GetAppID());
             inputObj.SetValue("mch_id", BlinkPayCardConfig.GetConfig().GetMchID());
             inputObj.SetValue("osu_number", GenerateNonceStr());
+            inputObj.SetValue("amount", "100");
+            inputObj.SetValue("currency", "CNY");
             inputObj.SetValue("sign_type", BlinkPayCardData.SIGN_TYPE_MD5);
             inputObj.SetValue("sign", inputObj.MakeSign(BlinkPayCardData.SIGN_TYPE_MD5));//签名
 

@@ -63,6 +63,8 @@ public class BlinkPayCardApi {
         params.put("app_id", appId);
         params.put("mch_id", mchId);
         params.put("osu_number",osuNumber);
+        params.put("amount", "100");
+        params.put("currency", "CNY");
         params.put("sign_type", signType);
 
         String sign = BlinkPayCardUtil.generateSignature(params,appKey,"md5");
