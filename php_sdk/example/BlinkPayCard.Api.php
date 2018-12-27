@@ -34,6 +34,7 @@ class BlinkPayCardApi
 			"app_id" => $app_id,
 			"mch_id" => $mch_id,
 			"osu_number" => $osu_number,
+			"amount" => "100",
 			"currency" => $currency,
 			"sign_type" => $sign_type
 		);
