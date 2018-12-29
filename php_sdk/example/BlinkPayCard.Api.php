@@ -23,8 +23,9 @@ class BlinkPayCardApi
 	 */
 	public static function preOrder($app_id, $mch_id, $app_key)
 	{
-		$url = "https://pay.api.blinkpaycard.com/pay/preOrder";
+		$url = "https://pay.blinkpaycard.com/pay/preOrder";
 		
+		$amount = "100";
 		$currency = "CNY";
 		$sign_type = 'md5';
 		$osu_number = self::getNonceStr(32);
@@ -34,7 +35,7 @@ class BlinkPayCardApi
 			"app_id" => $app_id,
 			"mch_id" => $mch_id,
 			"osu_number" => $osu_number,
-			"amount" => "100",
+			"amount" => $amount,
 			"currency" => $currency,
 			"sign_type" => $sign_type
 		);
@@ -48,7 +49,7 @@ class BlinkPayCardApi
 		echo "res: " . $response  . "\n </br>";
 		$result = json_decode($response, true);
 
-		$pre_order = $result['pre_order'];
+		$pre_order = $result['result']['pre_order'];
 
 		return $pre_order;
 	}
@@ -133,20 +134,25 @@ class BlinkPayCardApi
 	{		
 		$curl = curl_init($url);
 
+		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
 		curl_setopt($curl, CURLOPT_HEADER, false);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-type: application/json"));
-		curl_setopt($curl, CURLOPT_POST, true);
+		// curl_setopt($curl, CURLOPT_POST, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
+		echo "url :" . $url . "\n </br>";
+		echo "request params : " . $content  . "\n </br>";
 		//运行curl
 		$data = curl_exec($curl);
+		echo "response data : " . $data  . "\n </br>";
 		//返回结果
 		if($data){
 			curl_close($curl);
 			return $data;
 		} else { 
 			$error = curl_errno($curl);
+			echo curl_error($curl);
 			curl_close($curl);
 			throw new BlinkPayCardException("curl出错，错误码:$error");
 		}

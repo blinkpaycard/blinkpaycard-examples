@@ -24,7 +24,7 @@ namespace BlinkPayCard
             String pre_order = PreOrder(new BlinkPayCardData());
                 
             Console.WriteLine("=========== 订单查询 ===========");
-            OrderQuery(new BlinkPayCardData());
+            OrderQuery(new BlinkPayCardData(), pre_order);
 
             Console.WriteLine("=========== 网页充值 ===========");
             String webPayUrl = WebPay(pre_order);
@@ -95,13 +95,13 @@ namespace BlinkPayCard
         * @throws BlinkPayCardException
         * @return 成功时返回订单查询结果，其他抛异常
         */
-        public static BlinkPayCardData OrderQuery(BlinkPayCardData inputObj)
+        public static BlinkPayCardData OrderQuery(BlinkPayCardData inputObj, string pre_order)
         {
             string url = "https://pay.api.blinkpaycard.com/pay/queryResult";
 
             inputObj.SetValue("app_id", BlinkPayCardConfig.GetConfig().GetAppID());
             inputObj.SetValue("mch_id", BlinkPayCardConfig.GetConfig().GetMchID());
-            inputObj.SetValue("pre_order", "dae80fd0a98e4ba6bc4a77a3bac64d2c");
+            inputObj.SetValue("pre_order", pre_order);
             inputObj.SetValue("sign_type", BlinkPayCardData.SIGN_TYPE_MD5);
             inputObj.SetValue("sign", inputObj.MakeSign(BlinkPayCardData.SIGN_TYPE_MD5));//签名
 
