@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2a65cf4-2567-4fe3-9296-14b5a96fbb25" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../cs_sdk/BlinkPayCardApi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_sdk/BlinkPayCardApi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_sdk/bin/Debug/cs_sdk.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_sdk/bin/Debug/cs_sdk.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_sdk/bin/Debug/cs_sdk.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_sdk/bin/Debug/cs_sdk.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_sdk/obj/x86/Debug/cs_sdk.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_sdk/obj/x86/Debug/cs_sdk.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_sdk/obj/x86/Debug/cs_sdk.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_sdk/obj/x86/Debug/cs_sdk.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_sdk/obj/x86/Debug/cs_sdk.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_sdk/obj/x86/Debug/cs_sdk.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cs_sdk/obj/x86/Debug/cs_sdk.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../cs_sdk/obj/x86/Debug/cs_sdk.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/blinkpaycard/sdk/BlinkPayCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../php_sdk/example/BlinkPayCard.Api.php" beforeDir="false" afterPath="$PROJECT_DIR$/../php_sdk/example/BlinkPayCard.Api.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,11 +46,14 @@
     <session id="250884533">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -88,7 +82,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/blinkpaycard/sdk/BlinkPayCardApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1495">
+            <state relative-caret-position="828">
               <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -100,7 +94,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/blinkpaycard/sdk/BlinkPayCardUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
+            <state relative-caret-position="391">
               <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -112,7 +106,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/blinkpaycard/sdk/BlinkPayCardRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1150">
+            <state relative-caret-position="874">
               <caret line="50" column="60" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -176,10 +170,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="40" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="71" />
     <option name="y" value="23" />
-    <option name="width" value="1640" />
+    <option name="width" value="1609" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -188,6 +182,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -226,7 +221,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,19 +300,23 @@
       <workItem from="1546085501199" duration="1059000" />
       <workItem from="1546089185238" duration="786000" />
       <workItem from="1546091713526" duration="624000" />
+      <workItem from="1546152670762" duration="196000" />
+      <workItem from="1546153075409" duration="111000" />
+      <workItem from="1546153577053" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23360000" />
+    <option name="totallyTimeSpent" value="24266000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="23" width="1640" height="1027" extended-state="6" />
+    <frame x="71" y="23" width="1609" height="1027" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.41051313" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.4256541" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -326,7 +324,7 @@
       <window_info anchor="bottom" id="Messages" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.4673797" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.4673797" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
@@ -383,7 +381,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/blinkpaycard/sdk/BlinkPayCardUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
+        <state relative-caret-position="391">
           <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -393,7 +391,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/blinkpaycard/sdk/BlinkPayCardRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
+        <state relative-caret-position="874">
           <caret line="50" column="60" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -410,7 +408,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/blinkpaycard/sdk/BlinkPayCardApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1495">
+        <state relative-caret-position="828">
           <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />

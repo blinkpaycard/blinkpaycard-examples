@@ -1,6 +1,7 @@
 <?php
 require_once "BlinkPayCard.Config.php"; 
-require_once "BlinkPayCard.Api.php"; 
+require_once "BlinkPayCard.Api.php";
+header("Content-Type: text/html;charset=utf-8");
 
 $config = new BlinkPayCardConfig;
 $api = new BlinkPayCardApi;

@@ -1,4 +1,6 @@
 <?php
+
+header("Content-Type: text/html;charset=utf-8");
 /**
 *
 * 实际部署时，请务必保管自己的商户密钥，证书等
