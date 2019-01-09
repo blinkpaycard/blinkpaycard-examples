@@ -32,4 +32,6 @@ $api -> orderQuery($app_id, $mch_id, $app_key, $pre_order);
 echo "=========== 模拟接收通知消息 ===========" . "\n </br>";
 $api -> receiveNotify($notify);
 
-?>
+echo "=========== 提现结果查询 ===========" . "\n </br>";
+$withdraw_number = "37fd349c3cdf40718345943f0643c94b";
+$api -> withdrawQuery($withdraw_number);

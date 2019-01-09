@@ -239,4 +239,35 @@ class BlinkPayCardApi
         echo "res: " . $response  . "\n </br>";
     }
 
+    public static function withdrawQuery($withdraw_number)
+    {
+        $url = "https://pay.api.blinkpaycard.com/pay/withdrawQueryResult";
+
+        $sign_type = 'md5';
+
+
+        $config = new BlinkPayCardConfig;
+
+        $app_id = $config -> getAppId();
+        $mch_id = $config -> getMerchantId();
+        $app_key = $config -> getAppKey();
+
+        //sign
+        $params = array(
+            "mch_id" => $mch_id,
+            'app_id' => $app_id,
+            "withdraw_number" => $withdraw_number,
+            "sign_type" => $sign_type,
+        );
+
+        //签名
+        $sign  = self::makeSign($params, $app_key, $sign_type);
+        $params['sign'] = $sign;
+        $content = json_encode($params,JSON_UNESCAPED_UNICODE);
+
+        echo $content;
+        $response = self::postCurl($content, $url);
+        echo "res: " . $response  . "\n </br>";
+    }
+
 }
