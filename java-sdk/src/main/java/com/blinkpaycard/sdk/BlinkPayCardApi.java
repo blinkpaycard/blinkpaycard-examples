@@ -138,6 +138,14 @@ public class BlinkPayCardApi {
         JSONObject res = JSON.parseObject(notify);
         String nonce_str = res.getString("nonce_str");
         System.out.println("nonce_str : " + nonce_str);
+        try {
+            //业务处理
+            //1、验签
+            //2、 检查订单存在否
+            //3、... ...
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return nonce_str;
     }
