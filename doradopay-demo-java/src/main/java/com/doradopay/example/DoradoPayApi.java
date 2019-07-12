@@ -21,9 +21,9 @@ public class DoradoPayApi {
         String email = "gim.yum20@icloud.com";
         String ip_address = "142.136.62.200";
         String card_exp_month = "03";
-        String card_exp_year = "2023";
-        String card_number = "4385211206195406";
-        String card_cvc = "890";
+        String card_exp_year = "2028";
+        String card_number = "9876543211111";
+        String card_cvc = "888";
 
         String product_info = "casio 2019 newest";
         String country = "US";
